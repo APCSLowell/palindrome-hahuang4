@@ -39,7 +39,7 @@ public boolean palindrome(String sWord){
   
    String cleanWord = noSpaces(sWord).toLowerCase();
     String backwards = reverse(cleanWord);
-   if(sWord.equals(backwards))
+   if(cleanWord.equals(backwards))
    return true;
    else
    return false;
