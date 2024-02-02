@@ -35,8 +35,10 @@ public void tester()
     }
   }
 }
-public boolean isPalindrome(String sWord){
-   String backwards = reverse(sWord);
+public boolean palindrome(String sWord){
+  
+   String cleanWord = noSpaces(sWord).toLowerCase();
+    String backwards = reverse(cleanWord);
    if(sWord.equals(backwards))
    return true;
    else
@@ -50,5 +52,13 @@ public String reverse(String sWord) {
     }
     return s; 
 }
-
+public String noSpaces(String sWord) {
+    String word = "";
+    for (int i = 0; i < sWord.length(); i++) {
+        if (!sWord.substring(i, i + 1).equals(" ")) {
+            word += sWord.substring(i, i + 1);
+        }
+    }
+    return word;
+}
 }
