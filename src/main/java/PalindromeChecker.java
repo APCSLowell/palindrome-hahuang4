@@ -53,12 +53,16 @@ public String reverse(String sWord) {
     return s; 
 }
 public String noSpaces(String sWord) {
-    String word = "";
+      return onlyLetters(sWord);
+}
+public String onlyLetters(String sWord) {
+    String str = "";
     for (int i = 0; i < sWord.length(); i++) {
-        if (!sWord.substring(i, i + 1).equals(" ")) {
-            word += sWord.substring(i, i + 1);
+        if (Character.isLetter(sWord.charAt(i))) {
+            str = str + sWord.substring(i, i + 1);
         }
     }
-    return word;
+    return str;
 }
+
 }
