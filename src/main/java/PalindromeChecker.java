@@ -35,15 +35,23 @@ public void tester()
     }
   }
 }
-public boolean palindrome(String word)
-{
-  //your code here
-  return false;
+public boolean palindrome(String word) {
+    // Remove non-alphabetic characters and convert to lowercase
+    String cleanWord = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    // Get the reversed version of the cleanWord
+    String reversedWord = reverse(cleanWord);
+    // Check if the cleanWord equals its reversed version
+    return cleanWord.equals(reversedWord);
 }
-public String reverse(String str)
-{
-    String sNew = new String();
-    //your code here
-    return sNew;
+
+public String reverse(String str) {
+    StringBuilder reversed = new StringBuilder();
+    // Append each character of str in reverse order to the StringBuilder
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversed.append(str.charAt(i));
+    }
+    // Convert StringBuilder to String
+    return reversed.toString();
 }
+
 }
